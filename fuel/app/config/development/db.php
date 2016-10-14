@@ -5,10 +5,14 @@
 
 return array(
 	'default' => array(
+        'type' => 'mysqli',
 		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=fuel_dev',
+            'hostname' => 'localhost',
+            'port' => '3306',
+            'database' => 'contact2',
 			'username'   => 'root',
-			'password'   => 'root',
+			'password'   => '',
 		),
 	),
+
 );

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>管理画面 - ログイン -</title>
+    <link href="/Honoka-master/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/signin.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <form class="form-signin" action="/admin/signin" method="post">
+        <input type="hidden" name="{{ csrf_token_key|e }}" value="{{ csrf_token_value|e }}">
+      <!-- エラーメッセージ -->
+{% if error %}
+　　　  <div class="col-sm-12 alert alert-danger" role="alert">{{ error|e }}</div>
+{% endif %}
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">ID</label>
+        <input type="text" id="inputEmail" name="id" class="form-control" placeholder="ID" value="{{ id|e }}" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+    </div><!-- /container -->
+  </body>
+</html>
